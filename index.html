@@ -5,8 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <base href="/Google-Docs-Clone/"></base>
-    
+   <base href="https://0800webdev.github.io/Google-Docs-Clone/"></base>
+    <script>
+document.querySelectorAll('[src], [href], [srcset]').forEach(el => {
+    for (const attr of ['src', 'href']) {
+        const value = el.getAttribute(attr);
+        if (value && value.startsWith('/') && !value.startsWith('//')) {
+            el.setAttribute(attr, value.slice(1));
+        }
+    }
+});
+    </script>
     <title>Google Docs</title>
     <style>
         :root {
